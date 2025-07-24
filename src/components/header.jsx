@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Home, Map, BarChart3, UserPlus, Bell, Menu, X } from "lucide-react";
 
 const Header = () => {
@@ -27,8 +28,8 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <a
-            href="/"
+          <Link
+            to="/"
             className="flex items-center space-x-3 hover:scale-105 transition-transform"
           >
             <div className="relative">
@@ -43,7 +44,7 @@ const Header = () => {
                 Find Your Perfect Home
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden">
@@ -62,14 +63,14 @@ const Header = () => {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center space-x-3">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.path}
+                to={item.path}
                 className="flex items-center space-x-2 text-amber-700 hover:text-amber-900 px-4 py-2 rounded-xl text-sm font-semibold transition hover:bg-white hover:shadow-sm"
               >
                 <item.icon className="h-4 w-4" />
                 <span>{item.name}</span>
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -90,15 +91,15 @@ const Header = () => {
         <div className="lg:hidden bg-gradient-to-b from-amber-100 via-yellow-50 to-rose-100 backdrop-blur-md border-t border-amber-200">
           <div className="px-4 pt-4 pb-6 space-y-2">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.path}
+                to={item.path}
                 onClick={() => setIsMenuOpen(false)}
                 className="flex items-center space-x-3 px-4 py-3 text-amber-700 hover:bg-white rounded-xl transition"
               >
                 <item.icon className="h-5 w-5" />
                 <span className="font-medium">{item.name}</span>
-              </a>
+              </Link>
             ))}
 
             {/* Bell */}
