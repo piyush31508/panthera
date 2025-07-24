@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://panthera-f368.onrender.com/api",
+  baseURL: "https://server-r8fa.onrender.com/api",
   withCredentials: true,
 });
 
